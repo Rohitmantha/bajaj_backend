@@ -8,6 +8,7 @@ document.getElementById('submitBtn').addEventListener('click', async function ()
     errorElement.textContent = '';
     dropdownContainer.style.display = 'none';
     responseContainer.style.display = 'none';
+    
     const baseURL = window.location.origin;
 
     // Function to replace curly quotes with straight quotes
