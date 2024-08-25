@@ -8,6 +8,7 @@ document.getElementById('submitBtn').addEventListener('click', async function ()
     errorElement.textContent = '';
     dropdownContainer.style.display = 'none';
     responseContainer.style.display = 'none';
+    const baseURL = window.location.origin;
 
     // Function to replace curly quotes with straight quotes
     function fixQuotes(input) {
@@ -29,15 +30,15 @@ document.getElementById('submitBtn').addEventListener('click', async function ()
         errorElement.textContent = 'JSON must have a "data" array!';
         return;
     }
-
     try {
-        const response = await fetch('/bfhl', {
+        const response = await fetch(`${baseURL}/bfhl`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(jsonData)
         });
+        
 
         const result = await response.json();
         window.apiResponse = result;
