@@ -31,7 +31,7 @@ document.getElementById('submitBtn').addEventListener('click', async function ()
     }
 
     try {
-        const response = await fetch('http://localhost:5000/bfhl', {
+        const response = await fetch('/bfhl', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
