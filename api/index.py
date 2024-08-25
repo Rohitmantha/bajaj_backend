@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 from flask_cors import CORS
 
 app = Flask(__name__)
@@ -10,6 +10,10 @@ user_data = {
     "email": "john@xyz.com",
     "roll_number": "ABCD123"
 }
+
+@app.route('/', methods=['GET'])
+def home():
+    return render_template('index.html')
 
 @app.route('/bfhl', methods=['GET', 'POST'])
 def bfhl():

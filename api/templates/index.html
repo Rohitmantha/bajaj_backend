@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROLL NO</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>JSON Processor</h1>
+        <label for="jsonInput">Enter JSON:</label><br>
+        <textarea id="jsonInput" rows="5" placeholder='{"data": ["A", "C", "z"]}'></textarea><br>
+        <button id="submitBtn">Submit</button>
+        <p id="error" class="error"></p>
+
+        <div id="dropdownContainer" class="dropdown-container">
+            <label for="options">Select Response Data:</label><br>
+            <select id="options" multiple>
+                <option value="alphabets">Alphabets</option>
+                <option value="numbers">Numbers</option>
+                <option value="highest_lowercase_alphabet">Highest Lowercase Alphabet</option>
+            </select><br>
+            <button id="filterBtn">Filter</button>
+        </div>
+
+        <div id="responseContainer" class="response"></div>
+    </div>
+
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
